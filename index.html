@@ -35,14 +35,19 @@
             theme: {
                 extend: {
                     colors: {
-                        dark: 'var(--bg-color)',
-                        'dark-gray': 'var(--bg-dark-gray)',
-                        'neon-purple': 'var(--neon-purple)',
-                        'neon-cyan': 'var(--neon-cyan)',
-                        'inverse': 'var(--inverse-text)',
-                        'cta-bg': 'var(--btn-bg)',
-                        'cta-text': 'var(--btn-text)',
-                        'text-main': 'var(--text-color)',
+                        'accent': 'var(--accent)',
+                        'accent-soft': 'var(--accent-soft)',
+                    },
+                    backgroundColor: {
+                        'primary': 'var(--bg-primary)',
+                        'secondary': 'var(--bg-secondary)',
+                        'dark': 'var(--bg-dark)',
+                    },
+                    textColor: {
+                        'main': 'var(--text-main)',
+                        'secondary': 'var(--text-secondary)',
+                        'muted': 'var(--text-muted)',
+                        'inverse': 'var(--text-inverse)',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -64,16 +69,16 @@
                     class="w-10 h-10 bg-accent text-white rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
                     <i class="fas fa-gamepad text-lg"></i>
                 </div>
-                <span class="text-2xl font-bold tracking-tight font-display">NEXUS<span
+                <span class="text-2xl font-bold tracking-tight font-display text-main">NEXUS<span
                         class="text-accent">STUDIOS</span></span>
             </div>
 
             <div class="hidden md:flex items-center space-x-8">
-                <div class="flex space-x-8 text-sm font-medium text-gray-400">
-                    <a href="#logic" class="hover:text-neon-cyan transition-colors">Logic</a>
-                    <a href="#services" class="hover:text-neon-cyan transition-colors">Services</a>
-                    <a href="#team" class="hover:text-neon-cyan transition-colors">Team</a>
-                    <a href="#why-us" class="hover:text-neon-cyan transition-colors">Why Us</a>
+                <div class="flex space-x-8 text-sm font-medium text-secondary">
+                    <a href="#logic" class="hover:text-accent transition-colors">Logic</a>
+                    <a href="#services" class="hover:text-accent transition-colors">Services</a>
+                    <a href="#team" class="hover:text-accent transition-colors">Team</a>
+                    <a href="#why-us" class="hover:text-accent transition-colors">Why Us</a>
                 </div>
 
                 <!-- Theme Toggle -->
@@ -195,7 +200,7 @@
                             class="text-accent">Services</span></h2>
                     <p class="text-secondary max-w-xl">Tailored gaming solutions for every commerce touchpoint.</p>
                 </div>
-                <div class="text-gray-500 font-mono text-sm tracking-widest" data-aos="fade-left">
+                <div class="text-muted font-mono text-sm tracking-widest" data-aos="fade-left">
                     [ SOLUTIONS_CATALOG_2024 ]
                 </div>
             </div>
@@ -276,7 +281,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">Proven Reliability</h4>
-                                <p class="text-gray-500">With 50+ global projects, we have a refined system for
+                                <p class="text-secondary">With 50+ global projects, we have a refined system for
                                     delivering high-quality software on time, every time.</p>
                             </div>
                         </div>
@@ -287,7 +292,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">Technical Excellence</h4>
-                                <p class="text-gray-500">We don't build "simple" widgets. We build optimized, bug-free
+                                <p class="text-secondary">We don't build "simple" widgets. We build optimized, bug-free
                                     software capable of handling thousands of concurrent users.</p>
                             </div>
                         </div>
@@ -298,7 +303,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">ROI-Driven Design</h4>
-                                <p class="text-gray-500">Every mechanic is designed with your bottom line in mind. We
+                                <p class="text-secondary">Every mechanic is designed with your bottom line in mind. We
                                     build for sales, not just for fun.</p>
                             </div>
                         </div>
@@ -474,10 +479,10 @@
                     class="w-8 h-8 bg-accent text-white rounded-lg flex items-center justify-center">
                     <i class="fas fa-gamepad text-xs"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight font-display">NEXUS<span
+                <span class="text-xl font-bold tracking-tight font-display text-main">NEXUS<span
                         class="text-accent">STUDIOS</span></span>
             </div>
-            <p class="text-gray-500 text-sm">© 2024 Nexus Game Studios. All rights reserved.</p>
+            <p class="text-muted text-sm">© 2024 Nexus Game Studios. All rights reserved.</p>
             <div class="flex space-x-6 text-secondary text-xl">
                 <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com/in/ronish-neupane/" target="_blank"

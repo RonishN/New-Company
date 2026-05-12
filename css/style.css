@@ -1,5 +1,5 @@
 :root {
-    /* Claude-Inspired Palette */
+    /* Claude-Inspired Palette - Light Mode */
     --bg-primary: #F9F7F2;
     --bg-secondary: #FFFFFF;
     --bg-dark: #1D1D1D;
@@ -7,9 +7,10 @@
     --text-main: #1D1D1D;
     --text-secondary: #4A4A4A;
     --text-muted: #8E8E8E;
-    --text-on-dark: #F9F7F2;
+    --text-inverse: #F9F7F2;
     
     --accent: #D97757; /* Soft Terracotta */
+    --accent-soft: rgba(217, 119, 87, 0.1);
     --accent-light: #F4E4E0;
     --accent-dark: #B35D42;
     
@@ -25,20 +26,22 @@
 }
 
 [data-theme="dark"] {
-    --bg-primary: #1D1D1D;
-    --bg-secondary: #262626;
-    --bg-dark: #0F0F0F;
+    /* Dark Mode */
+    --bg-primary: #121212;
+    --bg-secondary: #1E1E1E;
+    --bg-dark: #0A0A0A;
     
     --text-main: #F9F7F2;
-    --text-secondary: #D1D1D1;
-    --text-muted: #8E8E8E;
-    --text-on-dark: #F9F7F2;
+    --text-secondary: #B0B0B0;
+    --text-muted: #666666;
+    --text-inverse: #1D1D1D;
     
-    --border-color: rgba(249, 247, 242, 0.08);
-    --glass-bg: rgba(29, 29, 29, 0.8);
+    --accent-soft: rgba(217, 119, 87, 0.2);
+    --border-color: rgba(249, 247, 242, 0.12);
+    --glass-bg: rgba(18, 18, 18, 0.8);
     
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 body {
