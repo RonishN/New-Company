@@ -1,40 +1,56 @@
 :root {
-    --bg-color: #050505;
-    --bg-dark-gray: #0f0f0f;
-    --text-color: #ffffff;
-    --text-gray: #9ca3af;
-    --text-muted: #6b7280;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.05);
-    --neon-purple: #9d4edd;
-    --neon-cyan: #00f5ff;
-    --grid-opacity: 0.02;
-    --nav-bg: rgba(255, 255, 255, 0.03);
-    --inverse-text: #050505;
-    --btn-bg: #ffffff;
-    --btn-text: #050505;
+    /* Claude-Inspired Palette */
+    --bg-primary: #F9F7F2;
+    --bg-secondary: #FFFFFF;
+    --bg-dark: #1D1D1D;
+    
+    --text-main: #1D1D1D;
+    --text-secondary: #4A4A4A;
+    --text-muted: #8E8E8E;
+    --text-on-dark: #F9F7F2;
+    
+    --accent: #D97757; /* Soft Terracotta */
+    --accent-light: #F4E4E0;
+    --accent-dark: #B35D42;
+    
+    --border-color: rgba(29, 29, 29, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-[data-theme="light"] {
-    --bg-color: #f8f9fa;
-    --bg-dark-gray: #ffffff;
-    --text-color: #1a1a1a;
-    --text-gray: #4b5563;
-    --text-muted: #9ca3af;
-    --glass-bg: rgba(0, 0, 0, 0.03);
-    --glass-border: rgba(0, 0, 0, 0.08);
-    --grid-opacity: 0.05;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-    --inverse-text: #ffffff;
-    --btn-bg: #050505;
-    --btn-text: #ffffff;
+[data-theme="dark"] {
+    --bg-primary: #1D1D1D;
+    --bg-secondary: #262626;
+    --bg-dark: #0F0F0F;
+    
+    --text-main: #F9F7F2;
+    --text-secondary: #D1D1D1;
+    --text-muted: #8E8E8E;
+    --text-on-dark: #F9F7F2;
+    
+    --border-color: rgba(249, 247, 242, 0.08);
+    --glass-bg: rgba(29, 29, 29, 0.8);
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
 }
 
 .transition-theme,
@@ -42,149 +58,122 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
 }
 
-/* Charm Badge Styles */
-@keyframes float {
-    0%, 100% { transform: translate(-50%, -12px); }
-    50% { transform: translate(-50%, -16px); }
-}
-
-@keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
-.charm-badge {
-    animation: float 3s ease-in-out infinite;
-    background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-    background-size: 200% 100%;
-    animation: float 3s ease-in-out infinite, shimmer 4s linear infinite;
-    backdrop-blur: 12px;
-}
-
-.charm-badge-purple { border: 1px solid rgba(157, 78, 221, 0.4); box-shadow: 0 0 20px rgba(157, 78, 221, 0.2); }
-.charm-badge-cyan { border: 1px solid rgba(0, 245, 255, 0.4); box-shadow: 0 0 20px rgba(0, 245, 255, 0.2); }
-
-.bg-grid {
-    background-size: 50px 50px;
-    background-image: linear-gradient(to right, rgba(128, 128, 128, var(--grid-opacity)) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(128, 128, 128, var(--grid-opacity)) 1px, transparent 1px);
-}
-
+/* Glass Effect */
 .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
 }
 
-.neon-border-purple {
-    box-shadow: 0 0 10px rgba(157, 78, 221, 0.2);
-    border: 1px solid rgba(157, 78, 221, 0.5);
+/* Professional Gaming Accents */
+.gaming-shape {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.05;
+    pointer-events: none;
 }
 
-.neon-border-cyan {
-    box-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
-    border: 1px solid rgba(0, 245, 255, 0.5);
+[data-theme="dark"] .gaming-shape {
+    opacity: 0.1;
 }
 
-.neon-text-purple {
-    text-shadow: 0 0 8px rgba(157, 78, 221, 0.8);
+.bg-accent-soft {
+    background-color: var(--accent-light);
+    color: var(--accent-dark);
 }
 
-.neon-text-cyan {
-    text-shadow: 0 0 8px rgba(0, 245, 255, 0.8);
+[data-theme="dark"] .bg-accent-soft {
+    background-color: rgba(217, 119, 87, 0.15);
+    color: var(--accent);
 }
 
-.gradient-text {
-    background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
+/* Custom Buttons */
+.btn-primary {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(217, 119, 87, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+    transform: translateY(-2px);
+}
+
+/* Card Styles */
+.pro-card {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.pro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+/* Typography Helpers */
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero-glow {
-    position: absolute;
-    width: 40vw;
-    height: 40vw;
-    background: radial-gradient(circle, rgba(157, 78, 221, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(60px);
-    z-index: -1;
-}
-
-.custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--neon-cyan);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease-out;
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    .custom-cursor {
-        display: block;
-    }
-}
-
-.step-connector {
-    position: relative;
-}
-
-@media (min-width: 768px) {
-    .step-connector::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(to right, var(--neon-purple), var(--neon-cyan));
-        z-index: -1;
-        transform: translateY(-50%);
-    }
-}
-
-@keyframes slow-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.animate-slow-spin {
-    animation: slow-spin 10s linear infinite;
-}
-
-/* Theme Toggle Button Styles */
+/* Theme Toggle Customization */
 #theme-toggle {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     transition: all 0.3s ease;
-    border: 1px solid var(--glass-border);
-    background: var(--glass-bg);
 }
 
 #theme-toggle:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--accent-light);
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
-[data-theme="light"] #theme-toggle i::before {
-    content: "\f186";
-    /* Moon icon */
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
-[data-theme="dark"] #theme-toggle i::before {
-    content: "\f185";
-    /* Sun icon */
+.animate-float {
+    animation: float 4s ease-in-out infinite;
 }
