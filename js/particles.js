@@ -13,7 +13,7 @@ class Particle {
 
     getThemeColor() {
         const theme = document.documentElement.getAttribute('data-theme');
-        return theme === 'dark' ? 'rgba(217, 119, 87, 0.5)' : 'rgba(217, 119, 87, 0.4)'; // Accent color
+        return theme === 'dark' ? 'rgba(217, 119, 87, 0.6)' : 'rgba(217, 119, 87, 1)'; // Solid color in light mode
     }
 
     update(mouse) {
@@ -110,7 +110,7 @@ function initParticles() {
                 + ((particlesArray[a].y - particlesArray[b_idx].y) * (particlesArray[a].y - particlesArray[b_idx].y));
                 if (distance < (canvas.width/7) * (canvas.height/7)) {
                     opacityValue = 1 - (distance / 10000);
-                    ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacityValue * (theme === 'dark' ? 0.15 : 0.1)})`;
+                    ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacityValue * (theme === 'dark' ? 0.3 : 0.7)})`;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
