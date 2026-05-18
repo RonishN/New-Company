@@ -193,3 +193,13 @@ h4,
 .animate-float {
     animation: float 4s ease-in-out infinite;
 }
+
+/* Mobile Navigation Menu Animation */
+#mobile-menu {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+#mobile-menu.open {
+    max-height: 400px;
+    opacity: 1;
+    border-top-color: var(--border-color) !important;
+}

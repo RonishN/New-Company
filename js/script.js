@@ -9,34 +9,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
     const htmlElement = document.documentElement;
 
     // Check for saved theme in localStorage
     const savedTheme = localStorage.getItem('theme') || 'dark';
     htmlElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    updateThemeIcons(savedTheme);
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    themeToggles.forEach(toggle => {
+        if (toggle) {
+            toggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcons(newTheme);
+            });
+        }
+    });
+
+    function updateThemeIcons(theme) {
+        themeToggles.forEach(toggle => {
+            const icon = toggle?.querySelector('i');
+            if (icon) {
+                if (theme === 'light') {
+                    icon.className = 'fas fa-moon';
+                } else {
+                    icon.className = 'fas fa-sun';
+                }
+            }
         });
     }
 
-    function updateThemeIcon(theme) {
-        const icon = themeToggle?.querySelector('i');
-        if (icon) {
-            if (theme === 'light') {
-                icon.className = 'fas fa-moon';
+    // Mobile Menu Toggle Logic
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('open');
+            if (isOpen) {
+                mobileMenu.classList.remove('open');
+                mobileMenuToggle.querySelector('i').className = 'fas fa-bars text-xl text-main';
             } else {
-                icon.className = 'fas fa-sun';
+                mobileMenu.classList.add('open');
+                mobileMenuToggle.querySelector('i').className = 'fas fa-times text-xl text-main';
             }
-        }
+        });
+
+        // Close mobile menu when any link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuToggle.querySelector('i').className = 'fas fa-bars text-xl text-main';
+            });
+        });
     }
 
     // Contact Form Handling

@@ -95,12 +95,28 @@
                 </a>
             </div>
 
-            <!-- Mobile Toggle Placeholder -->
+            <!-- Mobile Toggle -->
             <div class="md:hidden flex items-center space-x-4">
-                <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-white/10">
-                    <i class="fas fa-adjust"></i>
+                <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-white/10" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
                 </button>
-                <i class="fas fa-bars text-xl"></i>
+                <button id="mobile-menu-toggle" class="p-2 rounded-full hover:bg-white/10" aria-label="Toggle Menu">
+                    <i class="fas fa-bars text-xl text-main"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container (inside nav to auto-position) -->
+        <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0 border-t border-transparent">
+            <div class="container mx-auto px-6 py-6 flex flex-col space-y-4">
+                <a href="#logic" class="mobile-nav-link text-base font-medium text-secondary hover:text-accent transition-colors py-1">Logic</a>
+                <a href="#services" class="mobile-nav-link text-base font-medium text-secondary hover:text-accent transition-colors py-1">Services</a>
+                <a href="#team" class="mobile-nav-link text-base font-medium text-secondary hover:text-accent transition-colors py-1">Team</a>
+                <a href="#why-us" class="mobile-nav-link text-base font-medium text-secondary hover:text-accent transition-colors py-1">Why Us</a>
+                <hr class="border-border-color my-1">
+                <a href="#contact" class="btn-primary w-full text-center py-3">
+                    Book a Demo
+                </a>
             </div>
         </div>
     </nav>
